@@ -4,9 +4,17 @@ import TodoApp from "./components/TodoApp";
 import reportWebVitals from './reportWebVitals';
 import "./App.css";
 
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './store/reducers';
+
+const store = createStore(rootReducer);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <TodoApp/>
+  <Provider store={store}>
+    <TodoApp/>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

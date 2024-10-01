@@ -4,6 +4,8 @@ import Todos from "./Todos";
 import AddToDo from "./AddTodo";
 import { v4 as uuidv4 } from 'uuid';
 import axios from "axios";
+//import Footer from "../components/layout/Footer";
+import Footer from "../store/containers/Footer";
 
 function TodoApp() {
     const [state, setState] = useState({
@@ -83,6 +85,7 @@ function TodoApp() {
             <Todos todos={state.todos} 
                     handleChange={handleCheckboxChange}
                     deleteTodo={deleteTodo}/>
+            <Footer/>
         </div>
     );
 }
